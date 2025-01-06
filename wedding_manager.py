@@ -43,7 +43,7 @@ events = {
         "dress_code": "Smart-Casual",
         "link": "https://www.google.com/maps/place/Houghton+Terrace/@-26.1501413,28.0570936,17z/data=!3m1!4b1!4m6!3m5!1s0x1e950cff33410b1d:0x6e1c2a40df568d0!8m2!3d-26.1501461!4d28.0596685!16s%2Fg%2F11h4yr6tk3?authuser=0&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D"
     },
-    "Pre-Wedding Party": {
+    "Ultra-Themed Party": {
         "date": "2025-01-30",
         "time": "18:30",
         "venue": "To Be Confirmed (TBC)",
@@ -58,13 +58,16 @@ invitation_groups = {
     "1/2/3": ["Wedding Reception", "Nikkah", "Mendi Night (Women)"],
     "1/2/3/5": ["Wedding Reception", "Nikkah", "Mendi Night (Women)", "Pre-Wedding Dinner (Adam)"],
     "1/2/3/4/5": ["Wedding Reception", "Nikkah", "Mendi Night (Men)", "Mendi Night (Women)", "Pre-Wedding Dinner (Adam)"],
-    "1/2/3/5/6": ["Wedding Reception", "Nikkah", "Mendi Night (Women)", "Pre-Wedding Dinner (Adam)", "Pre-Wedding Party"],
+    "1/2/3/5/6": ["Wedding Reception", "Nikkah", "Mendi Night (Women)", "Pre-Wedding Dinner (Adam)", "Ultra-Themed Party"],
     "1/2/4": ["Wedding Reception", "Nikkah", "Mendi Night (Men)"],
     "1/2/4/5": ["Wedding Reception", "Nikkah", "Mendi Night (Men)", "Pre-Wedding Dinner (Adam)"],
-    "1/2/4/5/6": ["Wedding Reception", "Nikkah", "Mendi Night (Men)", "Pre-Wedding Dinner (Adam)", "Pre-Wedding Party"],
+    "1/2/4/5/6": ["Wedding Reception", "Nikkah", "Mendi Night (Men)", "Pre-Wedding Dinner (Adam)", "Ultra-Themed Party"],
     "1/2/5": ["Wedding Reception", "Nikkah", "Pre-Wedding Dinner (Adam)"],
     "2": ["Nikkah"],
-    "2/5": ["Nikkah", "Pre-Wedding Dinner (Adam)"]
+    "2/5": ["Nikkah", "Pre-Wedding Dinner (Adam)"],
+    "1/2/3/6": ["Wedding Reception", "Nikkah", "Mendi Night (Women)", "Ultra-Themed Party"],
+    "1/2/4/6": ["Wedding Reception", "Nikkah", "Mendi Night (Men)", "Ultra-Themed Party"],
+    "1/2/3/4/6": ["Wedding Reception", "Nikkah", "Mendi Night (Men)", "Mendi Night (Women)", "Ultra-Themed Party"],
 }
 
 # Load or create guest list
