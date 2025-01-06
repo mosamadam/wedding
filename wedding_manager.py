@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 from fpdf import FPDF
 import os
+import zipfile
+import io
 
 # Event details
 events = {
@@ -63,14 +65,25 @@ invitation_groups = {
 }
 
 # Load or create guest list
-@st.cache_data
 def load_guest_list():
-    return pd.DataFrame({
-        "Guest Name": ["Adam's Dad", "Shahana's Mom", "Best Friend", "Family Friend", "Work Colleague"],
-        "Group Type": ["1/2", "1/2/3", "1/2/3/5", "2", "1/2/4/5"]
-    })
+    """Load guest list from a CSV file or create a default list."""
+    file_path = "guest_list.csv"
+    if os.path.exists(file_path):
+        return pd.read_csv(file_path)
+    else:
+        # Default guest list
+        return pd.DataFrame({
+            "Guest Name": ["Adam's Dad", "Shahana's Mom", "Best Friend", "Family Friend", "Work Colleague"],
+            "Group Type": ["1/2", "1/2/3", "1/2/3/5", "2", "1/2/4/5"]
+        })
 
+def save_guest_list(guest_list):
+    """Save guest list to a CSV file."""
+    guest_list.to_csv("guest_list.csv", index=False)
+
+# Load the guest list
 guest_list = load_guest_list()
+
 
 # Main interface
 st.title(" Adam x Shahana Wedding Invitation Manager")
@@ -97,7 +110,12 @@ st.write("Manage guest names and group types dynamically:")
 # Editable data table
 edited_guest_list = st.data_editor(guest_list, num_rows="dynamic")
 
-# Button to generate invites
+# Save changes if the guest list is modified
+if st.button("Save Guest List"):
+    save_guest_list(edited_guest_list)
+    st.success("Guest list saved successfully!")
+
+# Button to generate invitations
 if st.button("Generate Invitations"):
     st.write("Generating invitations...")
     invite_files = []
@@ -137,7 +155,7 @@ if st.button("Generate Invitations"):
     
     st.success("Invitations generated!")
     
-    # Display download links for generated PDFs
+    # Display download links for individual files
     for file in invite_files:
         with open(file, "rb") as f:
             st.download_button(
@@ -146,6 +164,18 @@ if st.button("Generate Invitations"):
                 file_name=file,
                 mime="application/pdf"
             )
-
     
-    # test
+    # Create a ZIP file containing all the invitations
+    zip_buffer = io.BytesIO()
+    with zipfile.ZipFile(zip_buffer, "w") as zip_file:
+        for file in invite_files:
+            zip_file.write(file)
+    zip_buffer.seek(0)
+
+    # Add "Download All" button
+    st.download_button(
+        label="Download All Invitations as ZIP",
+        data=zip_buffer,
+        file_name="All_Invitations.zip",
+        mime="application/zip"
+    )
