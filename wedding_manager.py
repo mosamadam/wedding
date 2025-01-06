@@ -16,7 +16,7 @@ events = {
     },
     "Nikkah": {
         "date": "1st February 2025",
-        "time": "9:45 AM",
+        "time": "9:45 AM (Note: Please try be on time due to limited time at the venue)",
         "venue": "Nizamiye Mosque (Le Roux Avenue, Allandale, Midrand)",
         "dress_code": "Casual",
         "link": "https://www.google.com/maps/place/Nizamiye+Mosque/@-26.0145413,28.1269714,17z/data=!3m1!4b1!4m6!3m5!1s0x1e956de42eda71b3:0xe45cbc311e28a07c!8m2!3d-26.0145461!4d28.1295463!16s%2Fm%2F0n53q9j?authuser=0&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D"
@@ -56,10 +56,12 @@ invitation_groups = {
     "1/2": ["Wedding Reception", "Nikkah"],
     "1/2/3": ["Wedding Reception", "Nikkah", "Mendi Night (Women)"],
     "1/2/3/5": ["Wedding Reception", "Nikkah", "Mendi Night (Women)", "Pre-Wedding Dinner (Adam)"],
+    "1/2/3/4/5": ["Wedding Reception", "Nikkah", "Mendi Night (Women)", "Mendi Night (Men)", "Pre-Wedding Dinner (Adam)"],
     "1/2/3/5/6": ["Wedding Reception", "Nikkah", "Mendi Night (Women)", "Pre-Wedding Dinner (Adam)", "Pre-Wedding Party"],
     "1/2/4": ["Wedding Reception", "Nikkah", "Mendi Night (Men)"],
     "1/2/4/5": ["Wedding Reception", "Nikkah", "Mendi Night (Men)", "Pre-Wedding Dinner (Adam)"],
     "1/2/4/5/6": ["Wedding Reception", "Nikkah", "Mendi Night (Men)", "Pre-Wedding Dinner (Adam)", "Pre-Wedding Party"],
+    "1/2/5": ["Wedding Reception", "Nikkah", "Pre-Wedding Dinner (Adam)"],
     "2": ["Nikkah"],
     "2/5": ["Nikkah", "Pre-Wedding Dinner (Adam)"]
 }
