@@ -4,6 +4,7 @@ from fpdf import FPDF
 import os
 import zipfile
 import io
+from datetime import datetime
 
 # Event details
 events = {
@@ -56,7 +57,7 @@ invitation_groups = {
     "1/2": ["Wedding Reception", "Nikkah"],
     "1/2/3": ["Wedding Reception", "Nikkah", "Mendi Night (Women)"],
     "1/2/3/5": ["Wedding Reception", "Nikkah", "Mendi Night (Women)", "Pre-Wedding Dinner (Adam)"],
-    "1/2/3/4/5": ["Wedding Reception", "Nikkah", "Mendi Night (Women)", "Mendi Night (Men)", "Pre-Wedding Dinner (Adam)"],
+    "1/2/3/4/5": ["Wedding Reception", "Nikkah", "Mendi Night (Men)", "Mendi Night (Women)", "Pre-Wedding Dinner (Adam)"],
     "1/2/3/5/6": ["Wedding Reception", "Nikkah", "Mendi Night (Women)", "Pre-Wedding Dinner (Adam)", "Pre-Wedding Party"],
     "1/2/4": ["Wedding Reception", "Nikkah", "Mendi Night (Men)"],
     "1/2/4/5": ["Wedding Reception", "Nikkah", "Mendi Night (Men)", "Pre-Wedding Dinner (Adam)"],
@@ -124,40 +125,40 @@ if st.button("Generate Invitations"):
         group_type = row["Group Type"]
         events_for_group = invitation_groups[group_type]
         
-        
-        # Sort events by date in reverse order
-        # Reverse the order of the events list
+        # Reverse the order of the events
         sorted_events = events_for_group[::-1]
-
-        
         
         # Create PDF
         pdf = FPDF()
         pdf.add_page()
-        pdf.set_font("Arial", size=12)
+        pdf.set_font("Arial", size=10)  # Smaller font size for the entire PDF
         
         # Title with guest name
-        pdf.set_font("Arial", style="B", size=16)
-        pdf.cell(200, 10, txt=f"Itinerary - {guest_name}", ln=True, align="C")
-        pdf.ln(10)
+        pdf.set_font("Arial", style="B", size=12)  # Slightly larger title font
+        pdf.cell(200, 8, txt=f"Itinerary - {guest_name}", ln=True, align="C")
+        pdf.ln(5)  # Reduce space below the title
         
         # Event Details
         for event_name in sorted_events:
             event = events[event_name]
-            pdf.set_font("Arial", style="B", size=12)
-            pdf.cell(200, 10, txt=event_name, ln=True)
-            pdf.set_font("Arial", size=12)
-            pdf.cell(200, 10, txt=f"Date: {event['date']}", ln=True)
-            pdf.cell(200, 10, txt=f"Time: {event['time']}", ln=True)
-            pdf.cell(200, 10, txt=f"Dress Code: {event['dress_code']}", ln=True)
+            pdf.set_font("Arial", style="B", size=10)  # Smaller bold font for event name
+            pdf.cell(200, 6, txt=event_name, ln=True)  # Reduced line height
+
+            # Format the date to "Day-of-Week, Day Month Year"
+            formatted_date = datetime.strptime(event["date"], "%Y-%m-%d").strftime("%A, %d %B %Y")
+            pdf.set_font("Arial", size=9)  # Smaller font for details
+            pdf.cell(200, 6, txt=f"Date: {formatted_date}", ln=True)
+            
+            pdf.cell(200, 6, txt=f"Time: {event['time']}", ln=True)
+            pdf.cell(200, 6, txt=f"Dress Code: {event['dress_code']}", ln=True)
 
             # Add clickable venue name as the link
             pdf.set_text_color(0, 0, 255)  # Blue color for hyperlink
-            pdf.set_font("Arial", style="U", size=12)  # Underline for clickable text
-            pdf.cell(200, 10, txt=event["venue"], ln=True, link=event["link"])
+            pdf.set_font("Arial", style="U", size=9)  # Smaller underlined font for links
+            pdf.cell(200, 6, txt=event["venue"], ln=True, link=event["link"])
             pdf.set_text_color(0, 0, 0)  # Reset color to black
-            pdf.set_font("Arial", size=12)  # Reset font style
-            pdf.ln(10)
+            pdf.set_font("Arial", size=9)  # Reset font style
+            pdf.ln(3)  # Smaller line spacing between events
         
         # Save PDF
         file_path = f"Invitation_{guest_name.replace(' ', '_')}_{group_type.replace('/', '_')}.pdf"
