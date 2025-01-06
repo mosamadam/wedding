@@ -125,6 +125,9 @@ if st.button("Generate Invitations"):
         group_type = row["Group Type"]
         events_for_group = invitation_groups[group_type]
         
+        # Sort events by date in reverse order
+        sorted_events = sorted(events_for_group, key=lambda x: pd.to_datetime(events[x]["date"], dayfirst=True), reverse=True)
+        
         # Create PDF
         pdf = FPDF()
         pdf.add_page()
@@ -136,7 +139,7 @@ if st.button("Generate Invitations"):
         pdf.ln(10)
         
         # Event Details
-        for event_name in events_for_group:
+        for event_name in sorted_events:
             event = events[event_name]
             pdf.set_font("Arial", style="B", size=12)
             pdf.cell(200, 10, txt=event_name, ln=True)
