@@ -55,19 +55,19 @@ events = {
 # Invitation groups
 invitation_groups = {
     "1/2": ["Wedding Reception", "Nikkah"],
-    "1/2/3": ["Wedding Reception", "Nikkah", "Mendi Night (Invited Women)"],
-    "1/2/3/5": ["Wedding Reception", "Nikkah", "Mendi Night (Invited Women)", "Pre-Wedding Dinner (Adam)"],
-    "1/2/3/4/5": ["Wedding Reception", "Nikkah", "Mendi Night (After Party)", "Mendi Night (Invited Women)", "Pre-Wedding Dinner (Adam)"],
-    "1/2/3/5/6": ["Wedding Reception", "Nikkah", "Mendi Night (Invited Women)", "Pre-Wedding Dinner (Adam)", "Ultra-Themed Party"],
-    "1/2/4": ["Wedding Reception", "Nikkah", "Mendi Night (After Party)"],
-    "1/2/4/5": ["Wedding Reception", "Nikkah", "Mendi Night (After Party)", "Pre-Wedding Dinner (Adam)"],
-    "1/2/4/5/6": ["Wedding Reception", "Nikkah", "Mendi Night (After Party)", "Pre-Wedding Dinner (Adam)", "Ultra-Themed Party"],
+    "1/2/3": ["Wedding Reception", "Mendi Night (Invited Women)", "Nikkah"],
+    "1/2/3/5": ["Wedding Reception", "Mendi Night (Invited Women)", "Nikkah", "Pre-Wedding Dinner (Adam)"],
+    "1/2/3/4/5": ["Wedding Reception", "Mendi Night (After Party)", "Mendi Night (Invited Women)", "Nikkah", "Pre-Wedding Dinner (Adam)"],
+    "1/2/3/5/6": ["Wedding Reception", "Mendi Night (Invited Women)", "Nikkah", "Pre-Wedding Dinner (Adam)", "Ultra-Themed Party"],
+    "1/2/4": ["Wedding Reception", "Mendi Night (After Party)", "Nikkah"],
+    "1/2/4/5": ["Wedding Reception", "Mendi Night (After Party)", "Nikkah", "Pre-Wedding Dinner (Adam)"],
+    "1/2/4/5/6": ["Wedding Reception", "Mendi Night (After Party)", "Nikkah", "Pre-Wedding Dinner (Adam)", "Ultra-Themed Party"],
     "1/2/5": ["Wedding Reception", "Nikkah", "Pre-Wedding Dinner (Adam)"],
     "2": ["Nikkah"],
     "2/5": ["Nikkah", "Pre-Wedding Dinner (Adam)"],
-    "1/2/3/6": ["Wedding Reception", "Nikkah", "Mendi Night (Invited Women)", "Ultra-Themed Party"],
-    "1/2/4/6": ["Wedding Reception", "Nikkah", "Mendi Night (After Party)", "Ultra-Themed Party"],
-    "1/2/3/4/6": ["Wedding Reception", "Nikkah", "Mendi Night (After Party)", "Mendi Night (Invited Women)", "Ultra-Themed Party"],
+    "1/2/3/6": ["Wedding Reception", "Mendi Night (Invited Women)", "Nikkah", "Ultra-Themed Party"],
+    "1/2/4/6": ["Wedding Reception", "Mendi Night (After Party)", "Nikkah", "Ultra-Themed Party"],
+    "1/2/3/4/6": ["Wedding Reception", "Mendi Night (After Party)", "Mendi Night (Invited Women)", "Nikkah", "Ultra-Themed Party"],
 }
 
 # Load or create guest list
