@@ -12,14 +12,14 @@ events = {
         "date": "2025-02-02",
         "time": "13:00",
         "venue": "Beechwood Gardens (25 Christopherson Street, Hyde Park, Sandton)",
-        "dress_code": "Formal",
+        "dress_code": "Black-Tie/Formal",
         "link": "https://www.google.com/maps/place/Beechwood+Gardens/@-26.1322665,28.0384948,17z/data=!3m1!4b1!4m6!3m5!1s0x1e950cbf90f02587:0xa5acf013bfd8780d!8m2!3d-26.1322713!4d28.0410697!16s%2Fg%2F11b6d4zg8l?authuser=0&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D"
     },
     "Nikkah": {
         "date": "2025-02-01",
         "time": "9:45 AM (Note: Please try be on time due to limited time at the venue)",
         "venue": "Nizamiye Mosque (Le Roux Avenue, Allandale, Midrand)",
-        "dress_code": "Modest/Islamic Attire",
+        "dress_code": "Modest/Islamic-Attire",
         "link": "https://www.google.com/maps/place/Nizamiye+Mosque/@-26.0145413,28.1269714,17z/data=!3m1!4b1!4m6!3m5!1s0x1e956de42eda71b3:0xe45cbc311e28a07c!8m2!3d-26.0145461!4d28.1295463!16s%2Fm%2F0n53q9j?authuser=0&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D"
     },
     "Mendi Night (Invited Women)": {
